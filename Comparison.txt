@@ -1,0 +1,21 @@
+Greedy solution:
+INFO: Capacity=81, Accepted Weight=72,Cost of Accepted Items=76
+INFO: Capacity=8, Accepted Weight=0,Cost of Accepted Items=0
+INFO: Capacity=75, Accepted Weight=74,Cost of Accepted Items=148
+INFO: Capacity=56, Accepted Weight=54,Cost of Accepted Items=143
+INFO: total time taken (ms)=149
+INFO: 4
+-
+2,7
+6,9
+
+Dynamic solution:
+INFO: Capacity=81, Accepted Weight=72,Cost of Accepted Items=76
+INFO: Capacity=8, Accepted Weight=0,Cost of Accepted Items=0
+INFO: Capacity=75, Accepted Weight=74,Cost of Accepted Items=148
+INFO: Capacity=56, Accepted Weight=25,Cost of Accepted Items=143
+INFO: total time taken (ms)=167
+INFO: 4
+-
+2,7
+8,9
