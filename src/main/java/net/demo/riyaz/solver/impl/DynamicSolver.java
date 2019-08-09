@@ -1,10 +1,11 @@
-package com.mobiquityinc.solver.impl;
+package net.demo.riyaz.solver.impl;
 
-import com.mobiquityinc.dto.Consignment;
-import com.mobiquityinc.dto.Item;
-import com.mobiquityinc.solver.Solver;
+import net.demo.riyaz.dto.Consignment;
+import net.demo.riyaz.dto.Item;
+import net.demo.riyaz.solver.Solver;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -45,11 +46,11 @@ public class DynamicSolver implements Solver {
     public Consignment solve(Consignment consignment) {
         // sort item in descending order of of its cost so that the item with lower weight will be ranked higher that the
         // item with higher value in case of same cost of both the items.
-        Item[] items = consignment.getItems().stream().sorted((o1, o2) -> o1.getWeight().compareTo(o2.getWeight()))
+        Item[] items = consignment.getItems().stream().sorted(Comparator.comparing(Item::getWeight))
                 .collect(Collectors.toList())
                 .toArray(new Item[consignment.getItems().size()]);
 
-        int capacity = consignment.getWeight().intValue();
+        int capacity = consignment.getWeight();
 
         int NB_ITEMS = items.length;
 
@@ -88,8 +89,8 @@ public class DynamicSolver implements Solver {
                 w -= items[i - 1].getWeight();
             }
         }
-        Integer totalAcceptedWeight = itemsSolution.stream().mapToInt(mItem -> mItem.getWeight()).sum();
-        Integer totalAcceptedCost = itemsSolution.stream().mapToInt(mItem -> mItem.getCost()).sum();
+        Integer totalAcceptedWeight = itemsSolution.stream().mapToInt(Item::getWeight).sum();
+        Integer totalAcceptedCost = itemsSolution.stream().mapToInt(Item::getCost).sum();
 
         LOGGER.info("Capacity=" + consignment.getWeight() + ", Accepted Weight=" + totalAcceptedWeight + ",Cost of Accepted Items=" + totalAcceptedCost);
 

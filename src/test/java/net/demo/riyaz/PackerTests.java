@@ -1,7 +1,7 @@
-package com.mobiquityinc;
+package net.demo.riyaz;
 
-import com.mobiquityinc.exception.APIException;
-import com.mobiquityinc.packer.Packer;
+import net.demo.riyaz.exception.APIException;
+import net.demo.riyaz.packer.Packer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,7 @@ public class PackerTests {
     }
 
     @Test
-    public void testFromFileWithInValidContent() throws APIException {
+    public void testFromFileWithInValidContent() {
         RuntimeException thrown =
                 Assertions.assertThrows(RuntimeException.class,
                         () -> Packer.pack("./src/test/resources/invalidInput.txt"),

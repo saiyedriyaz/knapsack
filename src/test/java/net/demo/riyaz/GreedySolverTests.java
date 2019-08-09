@@ -1,9 +1,9 @@
-package com.mobiquityinc;
+package net.demo.riyaz;
 
-import com.mobiquityinc.dto.Consignment;
-import com.mobiquityinc.exception.APIException;
-import com.mobiquityinc.packer.DataPreparator;
-import com.mobiquityinc.solver.impl.GreedySolver;
+import net.demo.riyaz.dto.Consignment;
+import net.demo.riyaz.exception.APIException;
+import net.demo.riyaz.packer.DataPreparator;
+import net.demo.riyaz.solver.impl.GreedySolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -40,7 +40,7 @@ public class GreedySolverTests {
     }
 
     @Test
-    public void invalidInput() throws APIException {
+    public void invalidInput() {
         APIException thrown =
                 Assertions.assertThrows(APIException.class,
                         () -> new GreedySolver().solve(DataPreparator.populateConsignments("75 : (1.85.31,$29) (2,14.55,$74) (3,3.98,$16) (4,26.24,$55) (5,63.69,$52) (6,76.25,$75) (7,60.02,$74) (8,93.18,$35) (9,89.95,$78)")),

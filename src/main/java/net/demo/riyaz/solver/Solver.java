@@ -1,6 +1,6 @@
-package com.mobiquityinc.solver;
+package net.demo.riyaz.solver;
 
-import com.mobiquityinc.dto.Consignment;
+import net.demo.riyaz.dto.Consignment;
 
 /**
  * The strategy interface used by packer to solve the packing problem.

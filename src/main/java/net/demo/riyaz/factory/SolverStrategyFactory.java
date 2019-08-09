@@ -1,10 +1,10 @@
-package com.mobiquityinc.factory;
+package net.demo.riyaz.factory;
 
-import com.mobiquityinc.enums.SolverStrategy;
-import com.mobiquityinc.exception.APIException;
-import com.mobiquityinc.solver.Solver;
-import com.mobiquityinc.solver.impl.DynamicSolver;
-import com.mobiquityinc.solver.impl.GreedySolver;
+import net.demo.riyaz.enums.SolverStrategy;
+import net.demo.riyaz.exception.APIException;
+import net.demo.riyaz.solver.Solver;
+import net.demo.riyaz.solver.impl.DynamicSolver;
+import net.demo.riyaz.solver.impl.GreedySolver;
 
 /**
  * The strategy factory class to return the instance of suitable Strategy class to solve the packing problem.

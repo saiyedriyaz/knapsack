@@ -1,4 +1,4 @@
-package com.mobiquityinc.enums;
+package net.demo.riyaz.enums;
 
 /**
  * Supported Strategies to solve the knapsack problem.
@@ -9,7 +9,7 @@ public enum SolverStrategy {
 
     DYNAMIC("Dynamic");
 
-    private String name;
+    final private String name;
 
     SolverStrategy(String name) {
         this.name = name;

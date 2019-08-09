@@ -1,8 +1,8 @@
-package com.mobiquityinc.packer;
+package net.demo.riyaz.packer;
 
-import com.mobiquityinc.dto.Consignment;
-import com.mobiquityinc.dto.Item;
-import com.mobiquityinc.exception.APIException;
+import net.demo.riyaz.dto.Consignment;
+import net.demo.riyaz.dto.Item;
+import net.demo.riyaz.exception.APIException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,8 +53,7 @@ public class DataPreparator {
                 throw new APIException("Invalid Input parameters.");
             }
         }
-        Consignment consignment = new Consignment(Integer.valueOf(values[0].trim()), items);
-        return consignment;
+        return new Consignment(Integer.valueOf(values[0].trim()), items);
     }
 
     private static Integer getNextInt(Double weight) {

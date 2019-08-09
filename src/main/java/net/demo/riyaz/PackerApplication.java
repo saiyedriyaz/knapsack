@@ -1,10 +1,10 @@
-package com.mobiquityinc;
+package net.demo.riyaz;
 
-import com.mobiquityinc.enums.SolverStrategy;
-import com.mobiquityinc.exception.APIException;
-import com.mobiquityinc.exception.ValidationException;
-import com.mobiquityinc.factory.SolverStrategyFactory;
-import com.mobiquityinc.packer.Packer;
+import net.demo.riyaz.enums.SolverStrategy;
+import net.demo.riyaz.exception.APIException;
+import net.demo.riyaz.exception.ValidationException;
+import net.demo.riyaz.factory.SolverStrategyFactory;
+import net.demo.riyaz.packer.Packer;
 
 import java.util.logging.Logger;
 

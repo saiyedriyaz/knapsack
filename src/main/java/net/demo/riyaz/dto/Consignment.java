@@ -1,4 +1,4 @@
-package com.mobiquityinc.dto;
+package net.demo.riyaz.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

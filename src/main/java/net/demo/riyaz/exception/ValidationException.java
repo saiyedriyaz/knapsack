@@ -1,4 +1,4 @@
-package com.mobiquityinc.exception;
+package net.demo.riyaz.exception;
 
 import lombok.Getter;
 
@@ -10,7 +10,7 @@ import java.util.List;
 public class ValidationException extends APIException {
 
     @Getter
-    private List<String> validationMessages;
+    final private List<String> validationMessages;
 
     public ValidationException(String summary, List<String> validationMessages) {
         super(summary);

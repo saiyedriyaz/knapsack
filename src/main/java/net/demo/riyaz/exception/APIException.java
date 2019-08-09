@@ -1,4 +1,4 @@
-package com.mobiquityinc.exception;
+package net.demo.riyaz.exception;
 
 /**
  * This class indicates the API exception has occured while solving the packing problem.

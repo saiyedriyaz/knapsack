@@ -1,18 +1,19 @@
-package com.mobiquityinc.packer;
+package net.demo.riyaz.packer;
 
-import com.mobiquityinc.enums.SolverStrategy;
-import com.mobiquityinc.dto.Consignment;
-import com.mobiquityinc.exception.APIException;
-import com.mobiquityinc.exception.ValidationException;
-import com.mobiquityinc.factory.SolverStrategyFactory;
-import com.mobiquityinc.solver.Solver;
-import com.mobiquityinc.validator.RequestValidator;
+import net.demo.riyaz.dto.Item;
+import net.demo.riyaz.enums.SolverStrategy;
+import net.demo.riyaz.dto.Consignment;
+import net.demo.riyaz.exception.APIException;
+import net.demo.riyaz.exception.ValidationException;
+import net.demo.riyaz.factory.SolverStrategyFactory;
+import net.demo.riyaz.solver.Solver;
+import net.demo.riyaz.validator.RequestValidator;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,8 +22,6 @@ import java.util.stream.Stream;
  * @author Riyaz Saiyed
  */
 public class Packer {
-
-    private final static Logger LOGGER = Logger.getLogger(Packer.class.getName());
 
     private static Solver solver;
 
@@ -67,7 +66,7 @@ public class Packer {
                 String names = "-";
                 if (!accepted.getItems().isEmpty()) {
                     names = accepted.getItems().stream()
-                            .sorted((c1, c2) -> c1.getIndex() - c2.getIndex())
+                            .sorted(Comparator.comparingInt(Item::getIndex))
                             .map(p -> p.getIndex().toString())
                             .collect(Collectors.joining(","));
                 }

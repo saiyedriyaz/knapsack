@@ -1,16 +1,16 @@
-package com.mobiquityinc;
+package net.demo.riyaz;
 
-import com.mobiquityinc.dto.Consignment;
-import com.mobiquityinc.exception.ValidationException;
-import com.mobiquityinc.packer.DataPreparator;
-import com.mobiquityinc.validator.RequestValidator;
+import net.demo.riyaz.dto.Consignment;
+import net.demo.riyaz.exception.ValidationException;
+import net.demo.riyaz.packer.DataPreparator;
+import net.demo.riyaz.validator.RequestValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ValidatorTests {
 
     @Test
-    public void invalidConsignment() throws ValidationException {
+    public void invalidConsignment() {
         ValidationException thrown =
                 Assertions.assertThrows(ValidationException.class,
                         () -> RequestValidator.validate(new Consignment(0, null)),
@@ -18,7 +18,7 @@ public class ValidatorTests {
     }
 
     @Test
-    public void invalidConsignmentCapacity() throws ValidationException {
+    public void invalidConsignmentCapacity() {
         ValidationException thrown =
                 Assertions.assertThrows(ValidationException.class,
                         () -> RequestValidator.validate(DataPreparator.populateConsignments("175 : (1,85.31,$29) (2,14.55,$74) " +
@@ -33,7 +33,7 @@ public class ValidatorTests {
     }
 
     @Test
-    public void invalidConsignmentItems() throws ValidationException {
+    public void invalidConsignmentItems() {
         ValidationException thrown =
                 Assertions.assertThrows(ValidationException.class,
                         () -> RequestValidator.validate(DataPreparator.populateConsignments("15 : (1,185.31,$29) (2,14.55,$174) " +

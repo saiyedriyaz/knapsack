@@ -1,8 +1,8 @@
-package com.mobiquityinc.solver.impl;
+package net.demo.riyaz.solver.impl;
 
-import com.mobiquityinc.dto.Consignment;
-import com.mobiquityinc.dto.Item;
-import com.mobiquityinc.solver.Solver;
+import net.demo.riyaz.dto.Consignment;
+import net.demo.riyaz.dto.Item;
+import net.demo.riyaz.solver.Solver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,8 +48,8 @@ public class GreedySolver implements Solver {
             }
         }
 
-        Integer totalAcceptedWeight = itemsSolution.stream().mapToInt(mItem -> mItem.getWeight()).sum();
-        Integer totalAcceptedCost = itemsSolution.stream().mapToInt(mItem -> mItem.getCost()).sum();
+        Integer totalAcceptedWeight = itemsSolution.stream().mapToInt(Item::getWeight).sum();
+        Integer totalAcceptedCost = itemsSolution.stream().mapToInt(Item::getCost).sum();
 
         LOGGER.info("Capacity=" + consignment.getWeight() + ", Accepted Weight=" + totalAcceptedWeight + ",Cost of Accepted Items=" + totalAcceptedCost);
         return new Consignment(totalAcceptedWeight, itemsSolution);

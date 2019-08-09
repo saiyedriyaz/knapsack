@@ -1,8 +1,8 @@
-package com.mobiquityinc.validator;
+package net.demo.riyaz.validator;
 
-import com.mobiquityinc.dto.Consignment;
-import com.mobiquityinc.dto.Item;
-import com.mobiquityinc.exception.ValidationException;
+import net.demo.riyaz.dto.Consignment;
+import net.demo.riyaz.dto.Item;
+import net.demo.riyaz.exception.ValidationException;
 
 import java.util.ArrayList;
 import java.util.List;
