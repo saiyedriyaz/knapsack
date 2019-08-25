@@ -6,6 +6,7 @@ import net.demo.riyaz.solver.Solver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -23,7 +24,7 @@ import java.util.stream.Collectors;
  */
 public class GreedySolver implements Solver {
 
-    private final static Logger LOGGER = Logger.getLogger(GreedySolver.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(GreedySolver.class.getName());
 
     /**
      * Method which solve the knapsack problem with Greedy approach for the fastest solution.
@@ -51,7 +52,9 @@ public class GreedySolver implements Solver {
         Integer totalAcceptedWeight = itemsSolution.stream().mapToInt(Item::getWeight).sum();
         Integer totalAcceptedCost = itemsSolution.stream().mapToInt(Item::getCost).sum();
 
-        LOGGER.info("Capacity=" + consignment.getWeight() + ", Accepted Weight=" + totalAcceptedWeight + ",Cost of Accepted Items=" + totalAcceptedCost);
+        LOGGER.log(Level.INFO, "Capacity= {0}, Accepted Weight= {1} ,Cost of Accepted Items= {2}",
+                new Object[]{consignment.getWeight(), totalAcceptedWeight, totalAcceptedCost});
+
         return new Consignment(totalAcceptedWeight, itemsSolution);
     }
 }

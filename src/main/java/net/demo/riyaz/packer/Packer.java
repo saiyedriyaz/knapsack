@@ -1,8 +1,8 @@
 package net.demo.riyaz.packer;
 
+import net.demo.riyaz.dto.Consignment;
 import net.demo.riyaz.dto.Item;
 import net.demo.riyaz.enums.SolverStrategy;
-import net.demo.riyaz.dto.Consignment;
 import net.demo.riyaz.exception.APIException;
 import net.demo.riyaz.exception.ValidationException;
 import net.demo.riyaz.factory.SolverStrategyFactory;
@@ -23,9 +23,9 @@ import java.util.stream.Stream;
  */
 public class Packer {
 
-    private static Solver solver;
+    private Solver solver;
 
-    public static void setSolver(Solver s) {
+    public void setSolver(Solver s) {
         solver = s;
     }
 
@@ -35,7 +35,7 @@ public class Packer {
      * @param filePath - path to the file which contains the problem statement
      * @return a string containing the list of items included in the solution
      */
-    public static String pack(String filePath) throws APIException {
+    public String pack(String filePath) throws APIException {
 
         // In case strategy is not initialised, use default which is dynamic.
         if (solver == null) {

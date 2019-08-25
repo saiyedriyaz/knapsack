@@ -19,13 +19,18 @@ import java.util.regex.Pattern;
  * <p>
  * Example 1 = 75 : (1,85.31,€29)
  * Example 2 = 75 : (1,85.31,€29) (2,14.55,€74)
+ *
  * @author Riyaz Saiyed
  */
 public class DataPreparator {
 
-    private final static Logger LOGGER = Logger.getLogger(DataPreparator.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(DataPreparator.class.getName());
 
     private static final String GROUP_REGEX = "\\((.*?)\\)";
+
+    private DataPreparator() {
+
+    }
 
     /**
      * @param line input text with knapsack problem statement e.g. "75 : (1,85.31,€29) (2,14.55,€74)"
@@ -49,7 +54,7 @@ public class DataPreparator {
                         Integer.valueOf(itemAttributes[2].substring(1)));
                 items.add(item);
             } catch (IllegalArgumentException e) {
-                LOGGER.log(Level.SEVERE, "Exception while creating consignment" + e.getMessage());
+                LOGGER.log(Level.SEVERE, "Exception while creating consignment. message={0}", e.getMessage());
                 throw new APIException("Invalid Input parameters.");
             }
         }

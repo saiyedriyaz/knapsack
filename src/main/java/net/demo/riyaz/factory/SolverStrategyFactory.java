@@ -11,6 +11,8 @@ import net.demo.riyaz.solver.impl.GreedySolver;
  */
 public class SolverStrategyFactory {
 
+    private SolverStrategyFactory() {}
+
     /**
      * @param solverStrategy name of the strategy to solve the knapsack problem
      * @return the instance of Solver identified based on strategy name

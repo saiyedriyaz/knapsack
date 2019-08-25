@@ -14,6 +14,8 @@ import java.util.List;
  */
 public class RequestValidator {
 
+    private RequestValidator() {}
+
     /**
      * The method which validate the consignment request
      *
